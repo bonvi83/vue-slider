@@ -1,67 +1,105 @@
-/* funzioni reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(214, 165, 105);
-}
-
-.sezione {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
     height: 100vh;
-}
-
-.slider {
-    min-width: 100vh;
-    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.item {
+    float: left;
+    width: 700px;
+    height: 300px;
     position: relative;
 }
 
-/* le immagini dovrebbero essere al centro, ma risultano sempre sfasate, non so che fare */
-.immagini {
-    position: relative;
-    width: 800px;
-    height: 400px;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-img {
+.item img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-.bottone {
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
+.item .text {
     position: absolute;
-    text-align: center;
-    border-radius: 15px;
-    background-color: azure;
+    right: 20px;
+    bottom: 20px;
+    text-align: right;
+    color: white;
+}
+
+.thumbs {
+    float: left;
+    height: 300px;
+    background: #000;
+    position: relative;
+}
+
+.thumb {
+    height: calc((300px) / 5);
+    opacity: 0.5;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb.active {
+    border: 2px solid #ccc;
+    opacity: 1;
+}
+
+.prev, .next {
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    border-radius: 50%;
+    background: #ccc;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
     cursor: pointer;
+    z-index: 999;
 }
 
-.arrow-up {
-    top: 15px;
+.next {
+    bottom: 0;
 }
 
-.arrow-down {
-    bottom: 15px;
+/*
+EXTRA: in questo esempio gli accordion vengono creati
+usando 2 bordi di un quadratino ruotato di 45 gradi
+In una versione base si possono usare delle icone
+oppure i caratteri ∧ (&and;) e ∨ (&or;)
+ */
+.prev::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(-45deg);
+}
+
+.next::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%) rotate(135deg);
 }
