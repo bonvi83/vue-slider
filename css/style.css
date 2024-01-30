@@ -1,0 +1,67 @@
+/* funzioni reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(214, 165, 105);
+}
+
+.sezione {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slider {
+    min-width: 100vh;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* le immagini dovrebbero essere al centro, ma risultano sempre sfasate, non so che fare */
+.immagini {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+
+
+.bottone {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    text-align: center;
+    border-radius: 15px;
+    background-color: azure;
+    cursor: pointer;
+}
+
+.arrow-up {
+    top: 15px;
+}
+
+.arrow-down {
+    bottom: 15px;
+}
