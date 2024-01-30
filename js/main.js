@@ -18,7 +18,7 @@
 //     if(i == 0) {
 //         activeClass = "active";
 //         }
-        
+
 //         console.log(i, activeClass)
 //     slidesHtml += `<img src="./${slide}" class="slide ${activeClass}" alt="slide ${i}"s/>`;
 // }
@@ -85,3 +85,4 @@
 
 //     images[currentImage].classList.add("active");
 // })
+
