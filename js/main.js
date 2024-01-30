@@ -1,65 +1,44 @@
-const slides = [`img/01.webp`, `img/02.webp`,`img/03.webp`,`img/04.webp`,`img/05.webp`];
+// JS da esercizio dello slider
 
-let slidesHtml = ``;
+// const slides = [`img/01.webp`, `img/02.webp`,`img/03.webp`,`img/04.webp`,`img/05.webp`];
 
-
-const sliderImages = document.querySelector('.immagini');
-const btnUp = document.querySelector('.arrow-up');
-const btnDown = document.querySelector('.arrow-down');
+// let slidesHtml = ``;
 
 
-for (let i=0; i < slides.length; i++) {
+// const sliderImages = document.querySelector('.immagini');
+// const btnUp = document.querySelector('.arrow-up');
+// const btnDown = document.querySelector('.arrow-down');
 
-    const slide = slides [i];
 
-    let activeClass = "";
-    if(i == 0) {
-        activeClass = "active";
-        }
+// for (let i=0; i < slides.length; i++) {
+
+//     const slide = slides [i];
+
+//     let activeClass = "";
+//     if(i == 0) {
+//         activeClass = "active";
+//         }
         
-        console.log(i, activeClass)
-    slidesHtml += `<img src="./${slide}" class="slide ${activeClass}" alt="slide ${i}"s/>`;
-}
+//         console.log(i, activeClass)
+//     slidesHtml += `<img src="./${slide}" class="slide ${activeClass}" alt="slide ${i}"s/>`;
+// }
 
-console.log(slidesHtml)
+// console.log(slidesHtml)
 
-sliderImages.innerHTML = slidesHtml;
-
-
-let currentImage = 0;
+// sliderImages.innerHTML = slidesHtml;
 
 
-
-// bottone down
-
-btnDown.addEventListener("click", scorriSotto)
-
-
-function scorriSotto(){
-
-    const images = document.querySelectorAll(".slide");
-    console.log(images)
-
-    const test = images[currentImage];
-    console.log(test)
-
-    test.classList.remove("active");
-
-    currentImage++;
-
-
-    if (currentImage == slides.length){
-        currentImage = 0;
-    } 
-
-    images[currentImage].classList.add("active");
-}
+// let currentImage = 0;
 
 
 
-// RICREO LA FUNZIONE PER IMPARARE FORSE QUALCOSA   
+// // bottone down
 
-// function toImage(n){
+// btnDown.addEventListener("click", scorriSotto)
+
+
+// function scorriSotto(){
+
 //     const images = document.querySelectorAll(".slide");
 //     console.log(images)
 
@@ -68,40 +47,41 @@ function scorriSotto(){
 
 //     test.classList.remove("active");
 
-//     currentImage = n;
+//     currentImage++;
 
-//     images[n].classList.add("active");
+
+//     if (currentImage == slides.length){
+//         currentImage = 0;
+//     } 
+
+//     images[currentImage].classList.add("active");
 // }
 
 
-// setInterval per implementare la funzione all'infinito ogni 3 secondi
 
-setInterval(scorriSotto, 3000);
+// // setInterval per implementare la funzione all'infinito ogni 3 secondi
 
-
-
-// per fermare setInterval utilizzo    clearInterval(clock);
+// setInterval(scorriSotto, 3000);
 
 
+// // bottone up
 
-// bottone up
+// btnUp.addEventListener("click", function(){
 
-btnUp.addEventListener("click", function(){
+//     const images = document.querySelectorAll(".slide");
+//     console.log(images)
 
-    const images = document.querySelectorAll(".slide");
-    console.log(images)
+//     const test = images[currentImage];
+//     console.log(test)
 
-    const test = images[currentImage];
-    console.log(test)
+//     test.classList.remove("active");
 
-    test.classList.remove("active");
-
-    currentImage--;
+//     currentImage--;
 
 
-    if (currentImage < 0){
-        currentImage= slides.length - 1;
-    } 
+//     if (currentImage < 0){
+//         currentImage= slides.length - 1;
+//     } 
 
-    images[currentImage].classList.add("active");
-})
+//     images[currentImage].classList.add("active");
+// })
