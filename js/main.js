@@ -1,10 +1,10 @@
-const { createApp } = Vue;
+let { createApp } = Vue;
+const app = createApp({
+    data() {
+        return {
 
-createApp({
-data() {
-    return {
-        activeIndex: 0,
-        slides : [{
+            slides: [
+                {
                     image: 'img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
                     text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
@@ -24,28 +24,32 @@ data() {
                     image: 'img/05.webp',
                     title: "Marvel's Avengers",
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
-                }],
-    }},
+                }
+            ],
+            slideActive: 0,
+        };
 
+    },
     methods: {
-        addActive(index) {
+        goToSlide(index) {
             this.slideActive = index;
-        },
 
+        },
         indietro() {
             if (this.slideActive == 0) {
-                this.addActive(this.slides.length - 1);
+                this.goToSlide(this.slides.length - 1);
             } else {
-                this.addActive(this.slideActive - 1);
+                this.goToSlide(this.slideActive - 1);
             }
         },
-
         avanti() {
             if (this.slideActive >= this.slides.length - 1) {
-                this.addActive(0);
+                this.goToSlide(0);
             } else {
-                this.addActive(this.slideActive + 1);
+                this.goToSlide(this.slideActive + 1);
             }
         }
     }
-}).mount('#app');
+
+});
+app.mount('#app');
