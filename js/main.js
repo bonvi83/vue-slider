@@ -1,8 +1,8 @@
 let { createApp } = Vue;
+
 const app = createApp({
     data() {
         return {
-
             slides: [
                 {
                     image: 'img/01.webp',
@@ -27,14 +27,14 @@ const app = createApp({
                 }
             ],
             slideActive: 0,
-        };
-
+        }
     },
+
     methods: {
         goToSlide(index) {
             this.slideActive = index;
-
         },
+
         indietro() {
             if (this.slideActive == 0) {
                 this.goToSlide(this.slides.length - 1);
@@ -42,14 +42,21 @@ const app = createApp({
                 this.goToSlide(this.slideActive - 1);
             }
         },
+
         avanti() {
             if (this.slideActive >= this.slides.length - 1) {
                 this.goToSlide(0);
             } else {
                 this.goToSlide(this.slideActive + 1);
             }
-        }
-    }
+        },
 
+        // per tempo scorrimento dovrebbe essere na roba del genere FORMULA GENERALE
+        // activeInterval(){
+        //     this.autoScroll = setInterval( ()=>{
+        //         this.next()
+        //     },3000)
+        // }
+    }
 });
 app.mount('#app');
