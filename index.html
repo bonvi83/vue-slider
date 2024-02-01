@@ -21,13 +21,13 @@
           </div>
 
           <div class="thumbs">
-            <div class="prev"></div>
-            <div class="next"></div>
-
+            <div @click="indietro() " class="prev"></div>
+            <div @click="avanti()" class="next"></div>
             <div
-              v-for="(slide,i) in slides"
-              :class="addActive(i)"
-              class="thumb"
+              v-for="(slide,index) in slides"
+              :class="(index== slideActive )? 'active' : ''  "
+              @click="addActive(index)"
+              class="thumb active"
             >
               <img :src="slide.image" alt="Svezia" />
             </div>

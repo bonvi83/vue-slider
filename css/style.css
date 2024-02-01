@@ -27,7 +27,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+}   
 
 .item .text {
     position: absolute;
@@ -60,7 +60,8 @@ body {
     opacity: 1;
 }
 
-.prev, .next {
+.prev,
+.next {
     width: 20px;
     height: 20px;
     margin: 10px 0;
@@ -85,7 +86,7 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
  */
 
 .prev::after {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     border-top: 1px solid black;
@@ -98,7 +99,7 @@ oppure i caratteri ∧ (&and;) e ∨ (&or;)
 }
 
 .next::before {
-    content: '';
+    content: "";
     width: 10px;
     height: 10px;
     border-top: 1px solid black;
